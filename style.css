@@ -1,0 +1,207 @@
+/*================= Start Global Rules =================*/
+:root {
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-image: url(images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    min-height: 100vh;
+    font-size: 0.875rem;
+    background-color: var(--Very-Dark-Blue);
+    /* Centering items With Flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*================= End Global Rules =================*/
+
+
+/*================= End Fylo =================*/
+.fylo {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    -webkit-gap: 30px;
+    -moz-gap: 30px;
+    -ms-gap: 30px;
+    -o-gap: 30px;
+    margin-bottom: 6rem;
+}
+
+.fylo .column {
+    background-color: var(--Dark-Blue);
+    color: white;
+    padding: 2rem;
+    border-radius: 4px;
+}
+
+/* First Column */
+.fylo .one {
+    border-top-right-radius: 50px;
+    flex-basis: 20%;
+}
+
+.fylo .one>img {
+    margin-bottom: 20px;
+    max-width: 120px;
+}
+
+.fylo .one .storage-icons {
+    display: flex;
+    gap: 10px;
+    -webkit-gap: 10px;
+    -moz-gap: 10px;
+    -ms-gap: 10px;
+    -o-gap: 10px;
+    align-items: center;
+}
+
+.fylo .one .storage-icons img {
+    background-color: var(--Very-Dark-Blue);
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.fylo .one .storage-icons img:hover {
+    background-color: hsl(6, 100%, 80%);
+}
+
+/* Second Column */
+.fylo .two {
+    flex-basis: 40%;
+    position: relative;
+}
+
+.fylo .two>p {
+    color: var(--Pale-Blue);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.fylo .two>p span {
+    font-weight: bold;
+}
+
+/* Remaining */
+.fylo .two .remaining {
+    background-color: white;
+    color: black;
+    position: absolute;
+    bottom: 7rem;
+    right: 10%;
+    min-width: 150px;
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.fylo .two .remaining::after {
+    content: "";
+    border: 10px solid;
+    border-color: white white transparent transparent;
+    position: absolute;
+    bottom: -17px;
+    right: 0;
+}
+
+.fylo .two .remaining h4 {
+    font-size: 2.25rem;
+    margin-right: 5px;
+}
+
+.fylo .two .remaining p {
+    font-size: 0.75rem;
+}
+
+/* Progress */
+.fylo .two .progress .main-prog {
+    width: 100%;
+    height: 12.5px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: var(--Very-Dark-Blue);
+    padding: 1px;
+}
+
+.fylo .two .progress .main-prog span {
+    display: block;
+    width: 75%;
+    height: 100%;
+    background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    border-radius: 4px;
+    position: relative;
+}
+
+.fylo .two .progress .main-prog span::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    position: absolute;
+    border-radius: 50%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.fylo .two .progress .prog-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8125em;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+
+    body {
+        background-image: url(images/bg-mobile.png);
+        background-size: cover;
+    }
+
+    .fylo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fylo .column {
+        width: 75%;
+    }
+
+    .fylo .two .remaining {
+        bottom: -2rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .fylo .two .remaining::after {
+        display: none;
+    }
+
+}
+
+/*================= End Fylo =================*/
